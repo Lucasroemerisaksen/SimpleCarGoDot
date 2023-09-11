@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://cujvo2x4werfs"]
+
+[ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_r0wp6"]
+[ext_resource type="Texture2D" uid="uid://dyy3sdcwjp7rj" path="res://car.png" id="1_xaupw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vyxu2"]
+radius = 15.0
+height = 68.0
+
+[node name="CarScratch" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_r0wp6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0, 3.13669e-06)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_vyxu2")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(1.13687e-13, 3.13669e-06)
+rotation = 1.5708
+offset = Vector2(0, -5)
+drag_left_margin = 1.0
+editor_draw_screen = false
+
+[node name="Car" type="Sprite2D" parent="CharacterBody2D"]
+z_index = 2
+position = Vector2(9.53674e-07, -9.53674e-07)
+rotation = 1.5708
+scale = Vector2(0.0342046, 0.0323411)
+texture = ExtResource("1_xaupw")
